@@ -10639,7 +10639,7 @@ padding:7px 0px;
 		border-top: 1px solid rgba(0, 0, 0, 0.2);
 	}
 	.nav-dark.header-nav .nav>li>a {
-		color: #fff;
+		color: black;
 	}
 	.nav-dark.header-nav .nav>li>a:hover,
 	.nav-dark.header-nav .nav>li>a:active,
