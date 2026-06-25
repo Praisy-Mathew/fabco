@@ -34,7 +34,8 @@
     <!-- FLATICON STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="css/flaticon.min.css">	
     <!-- MAIN STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=3">
+    <link rel="stylesheet" class="skin" type="text/css" href="css/skin/skin-7.css?v=3">
       
          
 
@@ -54,6 +55,292 @@
             background-color: #fff !important;
             background-repeat: no-repeat !important;
             background-position: center center !important;
+        }
+
+        /* Custom Preloader Styles - Glassmorphism */
+        #custom-preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000000;
+            z-index: 999999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: 'Poppins', sans-serif;
+            transition: opacity 0.5s ease;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Decorative Background Blobs for Glass Effect */
+        #custom-preloader::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: #f97316;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+            z-index: 0;
+            animation: floatBlob1 10s ease-in-out infinite alternate;
+        }
+        #custom-preloader::after {
+            content: '';
+            position: fixed;
+            bottom: -15%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: #0144a8; /* Deep royal blue from logo */
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.2;
+            z-index: 0;
+            animation: floatBlob2 12s ease-in-out infinite alternate;
+        }
+        
+        @keyframes floatBlob1 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+        @keyframes floatBlob2 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-60px, -40px) scale(1.05); }
+        }
+
+        /* Entrance Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulseButton {
+            0% { box-shadow: 0 0 0 0 rgba(1, 68, 168, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(1, 68, 168, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(1, 68, 168, 0); }
+        }
+
+        #custom-preloader > * {
+            z-index: 1; /* Keep content above background blobs */
+        }
+
+        #custom-preloader .logo-container {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-shine-wrapper {
+            position: relative;
+            display: inline-block;
+            max-width: 380px;
+            width: 100%;
+            margin-bottom: 25px;
+            animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) backwards;
+        }
+
+        .base-logo {
+            width: 100%;
+            display: block;
+            filter: drop-shadow(0 4px 15px rgba(255,255,255,0.2));
+        }
+
+        .shine-logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: brightness(2) contrast(1.5) drop-shadow(0 0 10px rgba(255,255,255,0.5));
+            -webkit-mask-image: linear-gradient(-45deg, transparent 40%, rgba(255,255,255,1) 50%, transparent 60%);
+            -webkit-mask-size: 250% 250%;
+            animation: shineSweep 3.5s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes shineSweep {
+            0% { -webkit-mask-position: 150% 0; }
+            100% { -webkit-mask-position: -50% 0; }
+        }
+        #custom-preloader h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: transparent;
+            background: linear-gradient(90deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+            animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.15s backwards;
+        }
+        /* Typography-Focused List Style */
+        .expertise-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto auto auto;
+            padding: 0 20px;
+        }
+        
+        .expertise-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s backwards;
+        }
+        
+        .expertise-row:first-child {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .expertise-row:nth-child(2) {
+            animation-delay: 0.45s;
+        }
+
+        .expertise-row::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: #0144a8;
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+            transform-origin: center;
+        }
+
+        .expertise-row:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .expertise-row:hover::before {
+            transform: scaleY(0.7);
+        }
+
+        .row-number {
+            font-size: 24px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.3);
+            margin-right: 40px;
+            transition: color 0.4s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .expertise-row:hover .row-number {
+            color: #0144a8;
+        }
+
+        .row-content {
+            flex-grow: 1;
+        }
+
+        .row-content h3 {
+            font-size: 42px;
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+            margin: 0 0 10px 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: translateX(0);
+        }
+
+        .row-content p {
+            font-size: 16px;
+            font-weight: 300;
+            color: #888;
+            margin: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateX(0);
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .expertise-row:hover .row-content h3 {
+            color: #0144a8;
+            -webkit-text-stroke: 1px #0144a8;
+            transform: translateX(15px);
+            text-shadow: 0 0 20px rgba(1, 68, 168, 0.3);
+        }
+
+        .expertise-row:hover .row-content p {
+            color: #e0e0e0;
+            opacity: 1;
+            transform: translateX(15px);
+        }
+
+        .row-action {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #ffffff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.05);
+            margin-left: 30px;
+            animation: pulseButton 2s infinite 1s;
+        }
+
+        .expertise-row:hover .row-action {
+            background: #0144a8;
+            border-color: #0144a8;
+            color: #ffffff;
+            transform: translateX(10px) scale(1.1);
+            box-shadow: 0 0 25px rgba(1, 68, 168, 0.4);
+            animation: none; /* Pause pulsing on hover */
+        }
+        
+        .row-action i {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .expertise-row:hover .row-action i {
+            transform: translateX(4px) scale(1.2);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .row-content h3 { font-size: 22px; }
+            .row-content p { font-size: 13px; }
+            .row-number { font-size: 18px; margin-right: 20px; }
+            .expertise-row { padding: 30px 0; }
+            .row-action { width: 45px; height: 45px; font-size: 16px; margin-left: 15px; }
+            .expertise-row::before { left: -10px; }
+            .expertise-row:hover { padding-left: 10px; padding-right: 10px; }
         }
     </style>
     </head>
@@ -75,10 +362,9 @@
                             </ul>
                         </div>
                         <div class="mt-topbar-right">
-                            <div class="appint-btn" style="display: flex; gap: 10px;">
-                                <a href="trading.html" class="site-button" style="padding: 5px 15px; font-size: 13px;">Infrastructure</a>
-                                <a href="ict.html" class="site-button" style="padding: 5px 15px; font-size: 13px;">Cyber Security</a>
-                            </div>                            
+                            <div class="appint-btn">
+                                    <a href="index.html" class="site-button explore-btn-premium"><i class="fa fa-th" style="margin-right: 6px; font-size: 15px;"></i> EXPLORE DIVISIONS</a>
+                                </div>                            
                         </div>
                     </div>
                 </div>
@@ -1434,14 +1720,72 @@
               
     </div>
  
-<!-- LOADING AREA START ===== -->
-<div class="loading-area">
-    <div class="loading-box"></div>
-    <div class="loading-pic">
-        <div class="cssload-loader">Loading</div>
+<!-- CUSTOM PRELOADER START ===== -->
+<div id="custom-preloader">
+    <div class="logo-container">
+        <div class="logo-shine-wrapper">
+            <img src="images/fabco logo.png" alt="Fabco Logo" class="base-logo">
+            <img src="images/fabco logo.png" alt="" class="shine-logo">
+        </div>
+    </div>
+    <h2>Explore Our Expertise</h2>
+    <div class="expertise-list">
+        <div class="expertise-row" data-target="trading.html">
+            <span class="row-number">01</span>
+            <div class="row-content">
+                <h3>BUILDING &amp; INFRASTRUCTURE</h3>
+                <p>Innovative infrastructure and robust industrial solutions.</p>
+            </div>
+            <div class="row-action">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </div>
+        <div class="expertise-row" data-target="ict.html">
+            <span class="row-number">02</span>
+            <div class="row-content">
+                <h3>IT DEPARTMENT</h3>
+                <p>Advanced digital systems and comprehensive security.</p>
+            </div>
+            <div class="row-action">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </div>
     </div>
 </div>
-<!-- LOADING AREA  END ====== -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const preloader = document.getElementById('custom-preloader');
+        const rows = document.querySelectorAll('.expertise-row');
+
+        rows.forEach(row => {
+            row.addEventListener('click', function(e) {
+                // Prevent multiple clicks
+                if (this.classList.contains('processing')) return;
+                this.classList.add('processing');
+
+                const target = this.getAttribute('data-target');
+                
+                // Add loading state to button
+                const actionBtn = this.querySelector('.row-action');
+                actionBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+                
+                // Fade out the content, but keep the preloader's black background visible
+                const children = preloader.children;
+                for (let i = 0; i < children.length; i++) {
+                    children[i].style.transition = 'opacity 0.4s ease';
+                    children[i].style.opacity = '0';
+                }
+                
+                setTimeout(() => {
+                    // Redirect directly; the browser will navigate away while the screen remains black
+                    window.location.href = target;
+                }, 400);
+            });
+        });
+    });
+</script>
+<!-- CUSTOM PRELOADER END ====== -->
 
 
 <!-- JAVASCRIPT  FILES ========================================= --> 

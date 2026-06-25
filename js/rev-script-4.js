@@ -31,7 +31,7 @@ var revapi96,
 				onHoverStop:"off",
 				arrows: {
 					style:"uranus",
-					enable:false,
+					enable:true,
 					hide_onmobile:false,
 					hide_onleave:false,
 					tmp:'',

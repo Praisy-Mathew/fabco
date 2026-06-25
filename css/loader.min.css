@@ -15,7 +15,7 @@
 	text-transform: uppercase;
 	font-weight: 900;
 	font-size:18px;
-	color: rgb(245,192,35);
+	color: #0144a8;
 	letter-spacing: 0.2em;
 }
 .cssload-loader::before, .cssload-loader::after {
