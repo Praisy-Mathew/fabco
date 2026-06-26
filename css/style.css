@@ -17469,3 +17469,56 @@ color:#fff;
     70% { box-shadow: 0 0 0 10px rgba(1, 68, 168, 0); }
     100% { box-shadow: 0 0 0 0 rgba(1, 68, 168, 0); }
 }
+
+/* Hamburger Menu Active State (X Animation) */
+.navbar-toggler .icon-bar {
+    transition: all 0.3s ease-in-out !important;
+    transform-origin: center !important;
+}
+.navbar-toggler:not(.collapsed) {
+    background-color: #013380 !important; /* Slightly darker blue when active */
+}
+.navbar-toggler:not(.collapsed) .icon-bar-first {
+    transform: translateY(7px) rotate(45deg) !important;
+}
+.navbar-toggler:not(.collapsed) .icon-bar-two {
+    opacity: 0 !important;
+}
+.navbar-toggler:not(.collapsed) .icon-bar-three {
+    transform: translateY(-7px) rotate(-45deg) !important;
+}
+
+/* Sidebar Mobile Active State Styling */
+@media only screen and (max-width: 991px) {
+    .header-nav .nav>li.active>a,
+    .header-nav .nav>li.current-menu-item>a {
+        color: #0144a8 !important; /* Royal Blue */
+        font-weight: 700 !important;
+        background-color: #f2f7ff !important; /* Light blue highlight */
+        border-left: 4px solid #0144a8 !important;
+    }
+}
+
+/* Topbar Mobile View Fix (All Pages) */
+@media only screen and (max-width: 991px) {
+    .site-header .top-bar {
+        background-color: #000000 !important;
+        border-bottom: none !important;
+    }
+    .site-header .top-bar .container > .row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        margin: 0 !important;
+    }
+    .site-header .top-bar .mt-topbar-left {
+        margin-right: auto !important; /* Pushes the button to the right if contact info is visible */
+        padding-left: 15px !important;
+    }
+    .site-header .top-bar .mt-topbar-right {
+        float: none !important;
+        margin: 5px 0 !important;
+        padding-right: 15px !important;
+        display: block !important;
+    }
+}
