@@ -17522,3 +17522,14 @@ color:#fff;
         display: block !important;
     }
 }
+
+
+/* FORCE ALL FOOTERS TO SOLID BLACK */
+.site-footer,
+.footer-dark.site-footer,
+.site-footer .footer-top,
+.footer-dark .footer-top,
+.site-footer .footer-bottom,
+.footer-dark .footer-bottom {
+    background-color: #000000 !important;
+}
