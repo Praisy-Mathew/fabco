@@ -159,6 +159,7 @@
                                     <li ><a href="ict.html">Home</a></li>
                                     <li ><a href="ict-about.html">About</a></li>
                                     <li><a href="ict-services.html">Services</a></li>
+                                    <li class="active"><a href="ict-products.html">Products</a></li>
                                     
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
@@ -173,7 +174,7 @@
         <!-- CONTENT START -->
 
 <!-- SERVICES HERO START -->
-<div class="mt-bnr-inr overlay-wraper bg-parallax bg-top-center" data-stellar-background-ratio="0.5" style="background-image:url(images/custom/ict_about_hero_real.png); height: 600px;">
+<div class="mt-bnr-inr overlay-wraper bg-parallax bg-top-center" data-stellar-background-ratio="0.5" style="background-image:url(images/custom/it_products_hero.png); height: 600px;">
     <div class="overlay-main bg-black opacity-06"></div>
     <div class="container h-100">
         <div class="mt-bnr-inr-entry h-100 d-flex align-items-center justify-content-center">
@@ -189,53 +190,91 @@
 <!-- OUR PRODUCTS START -->
 <style>
 .glass-product-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: all 0.4s ease;
+    background: linear-gradient(145deg, #ffffff, #fcfcfc);
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     height: 100%;
     text-align: center;
-    border: 1px solid #f0f0f0;
+    border: 1px solid rgba(1, 68, 168, 0.08);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.glass-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(1, 68, 168, 0.03), rgba(255, 182, 0, 0.03));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease;
 }
 .glass-product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(255,182,0,0.15);
-    border-color: #0144a8;
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(1, 68, 168, 0.12);
+    border-color: rgba(1, 68, 168, 0.3);
+}
+.glass-product-card:hover::before {
+    opacity: 1;
 }
 .glass-product-card .img-wrapper {
-    height: 200px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 25px;
+    padding: 15px;
+    position: relative;
+}
+.glass-product-card .img-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(1,68,168,0.08) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+.glass-product-card:hover .img-wrapper::after {
+    transform: translate(-50%, -50%) scale(1.3);
 }
 .glass-product-card img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.06));
 }
 .glass-product-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.12) translateY(-5px);
 }
 .glass-product-card h5 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 15px;
-    min-height: 44px;
+    font-size: 19px;
+    font-weight: 800;
+    color: #0144a8;
+    margin-bottom: 12px;
+    min-height: 48px;
+    letter-spacing: -0.2px;
+    line-height: 1.3;
 }
 .glass-product-card p {
-    font-size: 14px;
-    color: #666;
+    font-size: 15px;
+    color: #555;
     margin-bottom: 0;
+    line-height: 1.6;
+    font-weight: 400;
 }
 </style>
 
-<!-- SECTION 1: Network & Computing -->
-<div class="section-full p-t80 p-b50 bg-white mobile-page-padding">
+<!-- ALL PRODUCTS -->
+<div class="section-full p-t80 p-b80 bg-white mobile-page-padding">
     <div class="container">
         <div class="text-center m-b50">
             <h2 class="text-uppercase" style=" font-weight:800; font-size:42px; letter-spacing:2px; margin-bottom:15px; color: #0144a8;">Our <span style="color:#0144a8;">Products</span></h2>
@@ -243,137 +282,220 @@
             <p style="color:#666; max-width:600px; margin:0 auto; font-size:16px;">Explore our extensive range of premium hardware, security devices, and networking equipment designed to support your enterprise infrastructure.</p>
         </div>
         
-        <div class="section-head text-center m-b40">
-            <h3 class="text-uppercase font-weight-700" style="color: #222;">Network & Computing</h3>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro1.png" alt="Villa IP Intercom Kit">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro2.webp" alt="Modem & Routers">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro3.webp" alt="Firewall">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco4.jpg" alt="Network Switch">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro5.webp" alt="Rack">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro6.jpg" alt="Laptops">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro7.jpeg" alt="Servers">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-        </div>
-    </div>
-</div>
 
-<!-- SECTION 2: Surveillance & Security -->
-<div class="section-full p-t50 p-b50 bg-gray mobile-page-padding">
-    <div class="container">
-        <div class="section-head text-center m-b40">
-            <h3 class="text-uppercase font-weight-700" style="color: #222;">Surveillance & Security</h3>
-        </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro8.png" alt="Hybrid ColorVu Camera">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro9.png" alt="Outdoor Camera">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro10.jpg" alt="PoE NVR">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro11.jfif" alt="Wireless Internal Sounder">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro12.jpg" alt="Wireless PIR Camera">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro13.webp" alt="IP Intercom Kit">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro14.webp" alt="Hybrid Wireless Receiver">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-        </div>
-    </div>
-</div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro1.png" alt="Villa IP Intercom Kit">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Villa IP Intercom Kit</h5>
+                    <p>Offers convenient villa communication with one-touch calling and mobile app control.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro2.webp" alt="Modem & Routers">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Modem & Routers</h5>
+                    <p>Connect and distribute internet access to create a stable local network.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro3.webp" alt="Firewall">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Firewall</h5>
+                    <p>Protects networks by monitoring and filtering traffic against cyber threats.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco4.jpg" alt="Network Switch">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Network Switch</h5>
+                    <p>Connects devices in a network and directs data efficiently to the right destination.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro5.webp" alt="Rack">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Rack</h5>
+                    <p>Organizes and securely houses servers and networking equipment.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro6.jpg" alt="Laptops">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Laptops</h5>
+                    <p>Provide portable computing for work, entertainment, and productivity.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro7.jpeg" alt="Servers">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Servers</h5>
+                    <p>Deliver data and services to connected devices across a network.</p>
+                </div>
+            </div>
 
-<!-- SECTION 3: Office & Automation -->
-<div class="section-full p-t50 p-b80 bg-white mobile-page-padding">
-    <div class="container">
-        <div class="section-head text-center m-b40">
-            <h3 class="text-uppercase font-weight-700" style="color: #222;">Office & Automation</h3>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro15.webp" alt="All-in-One (AIO) PC">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro16.jpeg" alt="All-in-One Printers">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro17.webp" alt="AX PRO Wireless Alarm Kit">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro18.jpg" alt="Speakers with Amplifier">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro19.webp" alt="Gate Automation Motor">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro20.jpg" alt="Time Attendance & Access Control">
-                                    <div class="img-overlay"></div>
-                                </div></div>
-<div class="col-lg-4 col-md-6 col-sm-12 m-b30"><div class="glass-product-card">
-                                <div class="img-wrapper">
-                                    <img src="images/fabco pro21.jpg" alt="SMATV">
-                                    <div class="img-overlay"></div>
-                                </div></div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro8.png" alt="Hybrid ColorVu Camera">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Hybrid ColorVu Camera</h5>
+                    <p>Provides 24/7 4K color imaging with smart detection, active deterrence, and advanced low-light performance.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro9.png" alt="Outdoor Camera">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Outdoor Camera</h5>
+                    <p>Delivers durable, high-resolution outdoor surveillance with long-range monitoring and advanced night vision.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro10.jpg" alt="PoE NVR">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>PoE NVR</h5>
+                    <p>Enables plug-and-play video recording with ultra HD support, multi-channel viewing, and large storage capacity.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro11.jfif" alt="Wireless Internal Sounder">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Wireless Internal Sounder</h5>
+                    <p>Offers long-range wireless alerting with loud sound output and easy app-based control.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro12.jpg" alt="Wireless PIR Camera">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Wireless PIR Camera</h5>
+                    <p>Combines motion detection and color imaging with long-range coverage and instant visual alerts.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro13.webp" alt="IP Intercom Kit">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>IP Intercom Kit</h5>
+                    <p>Provides complete door communication with indoor monitoring and expandable connectivity.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro14.webp" alt="Hybrid Wireless Receiver">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Hybrid Wireless Receiver</h5>
+                    <p>Supports multiple wireless security devices for seamless and scalable system integration.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro15.webp" alt="All-in-One (AIO) PC">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>All-in-One (AIO) PC</h5>
+                    <p>Combines computer and display into a compact, space-saving system.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro16.jpeg" alt="All-in-One Printers">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>All-in-One Printers</h5>
+                    <p>Handle printing, scanning, copying, and faxing in one device.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro17.webp" alt="AX PRO Wireless Alarm Kit">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>AX PRO Wireless Alarm Kit</h5>
+                    <p>Offers a complete wireless security system with smart connectivity and remote control.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro18.jpg" alt="Speakers with Amplifier">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Speakers with Amplifier</h5>
+                    <p>Deliver high-quality audio with built-in amplification in a simple setup.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro19.webp" alt="Gate Automation Motor">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Gate Automation Motor</h5>
+                    <p>Automates gate movement for convenient and secure access control.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro20.jpg" alt="Time Attendance & Access Control">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>Time Attendance & Access Control</h5>
+                    <p>Provide portable computing for work, entertainment, and productivity.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 m-b30">
+                <div class="glass-product-card">
+                    <div class="img-wrapper">
+                        <img src="images/fabco pro21.jpg" alt="SMATV">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <h5>SMATV</h5>
+                    <p>Provides smart display solutions with advanced features for monitoring and entertainment.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -415,6 +537,7 @@
                                     <li><a href="ict.html">Home</a></li>
                                     <li><a href="ict-about.html">About</a></li>
                                     <li><a href="ict-services.html">Services</a></li>
+                                    <li><a href="ict-products.html">Products</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </div>                           
