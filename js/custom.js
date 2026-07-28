@@ -564,7 +564,7 @@ function mobile_side_drawer(){
 //________page loader function by = custom.js________//	
 
 	function page_loader() {
-		$('.loading-area').fadeOut(1000)
+		$('.loading-area').fadeOut(300)
 	};
 
 	
@@ -652,7 +652,8 @@ function mobile_side_drawer(){
 			//________ Login Signup Form function by = custom.js ________//		
 			Get_in_touch()
 		
-				
+			// Fallback to hide preloader if window.load takes too long
+			setTimeout(page_loader, 500);
 	}); 
 
 /*--------------------------------------------------------------------------------------------
