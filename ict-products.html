@@ -235,6 +235,61 @@
     border-color: #444 !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
 }
+
+/* Fix icon shrinking and overlapping */
+.product-section .fa {
+    flex-shrink: 0 !important;
+}
+
+/* Ensure proper spacing for feature texts next to icons */
+.product-section .d-flex.align-items-center > div:not(.fa) {
+    padding-left: 10px;
+}
+
+/* Make sure horizontal lists wrap nicely on smaller screens */
+.product-section .d-flex.justify-content-between {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 15px;
+}
+.product-section .d-flex.justify-content-between > div {
+    flex: 0 1 auto;
+    min-width: 85px;
+}
+
+/* Fix the last section blue banner in each product */
+.product-section .col-12 .row.text-center.px-3 {
+    padding: 30px 15px !important;
+}
+.product-section .col-12 .row.text-center.px-3 i.fa {
+    flex-shrink: 0 !important;
+    margin-right: 12px !important;
+}
+.product-section .col-12 .row.text-center.px-3 strong {
+    text-align: left;
+    line-height: 1.3;
+}
+.product-section .col-12 .row.text-center.px-3 > div {
+    padding: 15px 10px !important;
+    justify-content: center !important;
+}
+
+/* Mobile full width adjustments */
+@media (max-width: 767px) {
+    .section-full .container-fluid.px-4 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .product-section {
+        padding: 30px 15px !important;
+        border-radius: 0 !important;
+    }
+    /* On mobile, align the bottom banner items slightly left for better flow since space is tight */
+    .product-section .col-12 .row.text-center.px-3 > div {
+        justify-content: flex-start !important;
+        padding-left: 15px !important;
+    }
+}
 </style>
 <style>
 .glass-product-card {
